@@ -1,60 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+
+
+        <!DOCTYPE html>
+<html>
     <head>
-       
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <link rel="stylesheet" href="src/styles.css"/>
-        <title>Weather App</title>
-        <link rel="manifest" href="/manifest.json">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>weather app</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
     <body>
         <div class="container">
-            <div class="weather-app">
-                <form class="search-form" id="search-form">
-                    <div class="row">
-                        <div class="col-6">
-                            <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off" id="city-input" class="form-control shadow-sm"/>
-                        </div>
-                        <div class="col-3">
-                            <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100"/>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-success w-100" id="current-location-button">Current
-              </button>
-                        </div>
-                    </div>
-                </form>
-                <h1 id="city"></h1>
-                <ul>
-                    <li id="date"></li>
-                    <li id="description"></li>
-                </ul>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="clearfix">
-                            <div class="float-left">
-                                <span class="temperature" id="temperature"></span>
-                                <span class="units">°C</span>
+            <div class="weather-app-wrapper">
+                <div class="weather-app">
+                    <div class="overview">
+                        <form id="search-form">
+                        <div class="row">
+                            <div class=" col-9">
+    <input type="search" placeholder="type a city"
+        class="form-control" id="city-input" autocomplete="off">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <ul>
-                            <li>
-                                Humidity: <span id="humidity"></span>
-                                %
-                            </li>
-                            <li>
-                                Wind: <span id="wind"></span>
-                                km/h
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<div class="col-2">
+<input type="submit" value="search" class=" btn btn-primary w-100" >
+</div>
+</div>
+                        </form>
+        
+      <h1 id="city"> New York</h1>
+      <ul>
+        <li id="date">
+            Friday 05:00
+        </li>
+        <li> 
+            Clear
+        </li>
+      </ul>
+        </div>
+        <div class="row">
+            <div class="col-6">
+        <div class="clearfix--weather-temprature">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNAboprdLIVgFM7FxYyQdW54uh_U4bSHDqigWKCWC1OZC8o0HjS4bOyrx_guUQJc6lu0&usqp=CAU.png" alt="clear"
+        width="50" >
+        <div class="float-left"><strong id="temperature"> 12</strong>
+       <span class="units"> <a href="" id="celcius-link">°c</a>/ <a href="" id="fahrenheit-link">°f</a></span>
+        </div>
+        </div>
+            </div>
+        <div class="col-6">
+        <ul>
+        <li>
+           <span id="diescription" >precipitation:0%</span>
+        </li>
+        <li>
+           <span id="humility">Humidity:73% </span>/ 
+        </li>
+        <li>
+     <span id="wind">  wind:2km/h </span>
+        </li>
+       </ul>
+      
+        </div>
+            </div>
             </div>
         </div>
-        <script src="src/index.js"></script>
+                </div>
+       <div class="link"> <small> <a href="">open source</a>by Ajuogu Esther
+    </small> </div>
+        <script src="index.js" ></script>
+    </body>
+</html>
