@@ -1,8 +1,8 @@
 import axios from "axios";
 
-function formatDate(timeStamp) {
-  let date = new Date(timeStamp);
-  let hours = timeStamp.getHours();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = timestamp.getHours();
   let minutes = date.getMinutes();
   if (minutes < 10) {
     let hours = date.getHours();
@@ -22,6 +22,17 @@ function formatDate(timeStamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function formatDay(timestamp){
+    let date = new Date(timestamp*1000);
+    let day=date.getDate();
+     let days=[
+    "Sunday",
+    "Monday",
+    "Tueaday",
+    "Wednesday",
+];
+return  days[day];
+}
 
 function displayForcast(response){
     console.log(response.data.daily);
@@ -30,7 +41,8 @@ function displayForcast(response){
             <div class="row">
                 <div class="col-2">
                   <div class ="weather-forcast-date" > sun</div>
-                  <img src="https://openweathermap.org/img/wn/5od@2x.png"
+                  <img src="https://openweathermap.org/img/wn/
+                  ${forcastDay.weather[0].icon}@2x.png"
                   alt="" width="42">
                   <div class="weather-forcast-temperature">
                     <span class="weather-forcast-temperature-max">18</span>
