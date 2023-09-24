@@ -26,6 +26,20 @@ function formatDate(timeStamp) {
 function displayForcast(response){
     console.log(response.data);
     let forcastElement=document.querySelector("#forcast");
+    forcastElement.innerHTML=forcastHtml+` <div class="weather-forcast">
+            <div class="row">
+                <div class="col-2">
+                  <div class ="weather-forcast-date" > sun</div>
+                  <img src="https://openweathermap.org/img/wn/5od@2x.png"
+                  alt="" width="42">
+                  <div class="weather-forcast-temperature">
+                    <span class="weather-forcast-temperature-max">18</span>
+                    <span class="weather-forcast-temperature-min">12</span>
+                  </div>
+                </div>
+            </div>
+        </div>
+            </div>`;
     let days=[
     "Sunday",
     "Monday",
@@ -33,7 +47,7 @@ function displayForcast(response){
     "Wednesday",
 ];
 return`${day} ${hours}:${minutes}`;
-let forcastHtml=
+let forcastHtml=`<div class="row>`;
 days.forEach(funtion(day) {forcastHtml=forcastHtml+`<div class="col-2>
 <div class=weather-forcast-date>${day} </div>`
     
