@@ -17,11 +17,39 @@ function formatDate(timeStamp) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday",
+    "Saturday"
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
+function displayForcast(response){
+    console.log(response.data);
+    let forcastElement=document.querySelector("#forcast");
+    let days=[
+    "Sunday",
+    "Monday",
+    "Tueaday",
+    "Wednesday",
+];
+return`${day} ${hours}:${minutes}`;
+let forcastHtml=
+days.forEach(funtion(day) {forcastHtml=forcastHtml+`<div class="col-2>
+<div class=weather-forcast-date>${day} </div>`
+    
+});
+}
+
+function getForcast(coordinate){
+console.log(coordinate);
+let apiKey = b3b7f0a3ff1dbcc14114dfae05acef2f;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?=q=${city}&lat${lat}&lon${lon}&exclude={part}&appid=${apiKey}&unit=metric`;
+console.log("apiUrl");
+let lat =position.coord.latitude;
+let lon=position.coords.longitude;
+axios.get(apiUrl).then(displayTemperature);
+}
+
 function displayTemperature(response) {
   console.log(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
