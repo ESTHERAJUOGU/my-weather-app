@@ -94,7 +94,8 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#icon");
-  iconElement.innerHTML = `https:/openweathermap.org/img/wn/04d@2x.png`;
+  iconElement.setAttribute("src", `https:/openweathermap.org/img/wn/${respons.data.weather[0].icon}@2x.png`;
+  iconElement.setAttribute("alt",response.data.weather[0].description);
   celciusTemperature = response.data.main.temp;
   getForcast(response.data.coord)
 
